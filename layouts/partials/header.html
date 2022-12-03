@@ -28,7 +28,13 @@
                 {{ $node.Scratch.Set "separator" false }}
               {{ end }}
               <li class="navigation-item">
-                <a href="{{ .Permalink }}">{{ .Language.LanguageName | emojify }}</a>
+                {{ if (and .IsHome (eq .Site.Language.Lang "en")) }}
+                    <a href="/en/index.html">{{ .Language.LanguageName | emojify }}</a>
+                {{ else if .IsHome }}
+                    <a href="/index.html">{{ .Language.LanguageName | emojify }}</a>
+                {{ else }}
+-                   <a href="{{ .Permalink }}">{{ .Language.LanguageName | emojify }}</a>
+                {{ end }}
               </li>
             {{ end }}
           {{ end }}
