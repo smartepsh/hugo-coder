@@ -7,11 +7,17 @@
     {{ now.Year }}
     {{ with .Site.Params.author }} {{ . }} {{ end }}
     ·
+    <span id="busuanzi_container_site_uv">Visits: <span id="busuanzi_value_site_uv"></span>
+    <br/>
     {{ if (and .Site.Params.license) }}
       {{ i18n "licensed_under" }} {{ .Site.Params.license | safeHTML }}
     ·
     {{ end }}
-    {{ i18n "powered_by" }} <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    {{ i18n "powered_by" }} <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>
+    ·
+    <a href="https://beian.miit.gov.cn/">陕ICP备16009369号-1</a>
+    ·
+    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=61030302000157">陕公网安备61030302000157号</a>
     {{ if (and .Site.Params.commit .GitInfo) }}
       [<a href="{{ .Site.Params.commit }}/{{ .GitInfo.Hash }}">{{ .GitInfo.AbbreviatedHash }}</a>]
     {{ end }}
